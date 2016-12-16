@@ -1,5 +1,6 @@
 package com.example.mgonzalezlorenzo.simonexamen;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
@@ -217,16 +218,22 @@ public class MainActivity extends AppCompatActivity {
             String simonElect = simonColors.toString();
             String userElect = userColors.toString();
 
+
+
             if (simonElect.equalsIgnoreCase(userElect)) {
-                start.setText("JUEGA DE NUEVO");
-                Toast.makeText(getApplicationContext(), "GG WP VICTORIA", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, FinalActivity.class);
+                String nulo = null;
+                intent.putExtra("condicion",nulo);
+                startActivity(intent);
+
 
             } else {
-                start.setText("REINTENTAR");
-                Toast.makeText(getApplicationContext(), "OMG REPORT THIS NOOB", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, FinalActivity.class);
+                intent.putExtra("condicion","asdf");
+                startActivity(intent);
             }
-            simonColors.clear();
-            userColors.clear();
+            //simonColors.clear();
+            //userColors.clear();
         }
     }
     public int random(){
