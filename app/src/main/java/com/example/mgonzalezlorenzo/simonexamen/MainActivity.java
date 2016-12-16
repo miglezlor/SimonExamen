@@ -218,22 +218,23 @@ public class MainActivity extends AppCompatActivity {
             String simonElect = simonColors.toString();
             String userElect = userColors.toString();
 
-
+            //Condiciones de final de partida
 
             if (simonElect.equalsIgnoreCase(userElect)) {
+                //creo un intent para enviar una variable a la clase secundaria
+
                 Intent intent = new Intent(MainActivity.this, FinalActivity.class);
                 String nulo = null;
-                intent.putExtra("condicion",nulo);
+                intent.putExtra("condicion",nulo); //le asigno el valor nulo para comparar en la otra clase
                 startActivity(intent);
 
 
             } else {
                 Intent intent = new Intent(MainActivity.this, FinalActivity.class);
-                intent.putExtra("condicion","asdf");
+                intent.putExtra("condicion","asdf"); //le asigno un String cualquiera para comparar
                 startActivity(intent);
             }
-            //simonColors.clear();
-            //userColors.clear();
+
         }
     }
     public int random(){
